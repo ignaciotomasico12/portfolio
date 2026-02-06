@@ -30,5 +30,12 @@
     },
     "description": "I have 5 years of experience as a software developer specializing in Frontend with React and Next JS. I have been in various projects developing web platforms with React and Next JS for large clients. I have helped improve and finalize projects in progress that needed a push to move forward. And I have been training and developing during all these years",
     "button": "Contact me"
+  },
+  "about": {
+    "title": "About me",
+    "description": {
+      "p1": "Hi, I'm Ignacio Tomás Floría, I'm a Frontend developer and I love creating and developing new and challenging projects that allow me to continue learning and growing as a professional. I started programming a few years ago, when I finished High School and decided to study a higher-level degree in Computer Networks. There, although it was little, I learned the basics of web programming with HTML and CSS. Since then, thanks to a colleague and good friend, who taught me almost everything I know about web programming, I have been specializing in various web programming languages.",
+      "p2": "I have been able to participate in different projects in my first job as a web developer, ranging from a mobile application for booking paddle tennis courts to an Intranet. In these few years as a web developer, I have been able to learn and work with different web programming languages."
+    }
   }
 }

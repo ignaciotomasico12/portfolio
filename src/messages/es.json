@@ -30,5 +30,12 @@
     },
     "description": "Tengo 5 años de experiencia como desarrollador de software especializado en Frontend con React y Next JS. He estado en diversos proyectos desarrollando plataformas web con React y con Next JS para clientes grandes. He ayudado a mejorar y a finalizar proyectos en marcha que necesitaban un empujón para salir adelante. Y me he estado formando y desarrollando durante todos estos años",
     "button": "Contacta conmigo"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": {
+      "p1": "Hola, soy Ignacio Tomás Floría, soy desarrollador Frontend y me encanta crear y desarrollar proyectos nuevos y desafiantes que me permitan seguir aprendiendo y creciendo como profesional. Empecé a programar hace unos pocos años, cuando salí del Bachillerato y decidí cursar un grado superior en Redes Informáticas. Ahí, aunque fuese poco, aprendí las nociones básicas de la programación web con HTML y CSS. Desde entonces gracias a un compañero y buen amigo, que me enseñó casi todo lo que sé acerca de la programación web, me he ido especializando en diversos lenguajes de programación web.",
+      "p2": "He podido participar en distintos proyectos en mi primer trabajo como desarrollador web, que van desde una aplicación móvil para hacer reservas de pistas de pádel hasta una Intranet. En estos pocos años como desarrollador web, he podido aprender y trabajar con distintos lenguajes de programación web."
+    }
   }
 }
