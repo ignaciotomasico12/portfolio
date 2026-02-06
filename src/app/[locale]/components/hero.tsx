@@ -1,5 +1,3 @@
-'use client';
-
 import { Button } from "@/components/ui/button";
 import { TypewriterLoop } from "@/components/typewriter-loop";
 import { SOCIAL_MEDIA } from "@/lib/constants";
@@ -13,7 +11,7 @@ import AnimatedLogo from "@/components/animated-logo";
 export default function Hero() {
     const hero = useTranslations('hero');
     const emailRef = useRef<MailIconHandle>(null);
-    
+
     const { scrollY } = useScroll();
     const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
@@ -41,7 +39,7 @@ export default function Hero() {
                             hero('subtitle_words.word4')
                         ]}
                         className="text-grey-900"
-                        cursorClassName="bg-grey-900 h-2 lg:h-6 w-[2px]"
+                        cursorClassName="bg-grey-900 h-4 lg:h-8 w-[2px]"
                     />
                 </h2>
                 <p className="text-left">{hero('description')}</p>

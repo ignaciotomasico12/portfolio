@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  [role="button"] {
+    cursor: none;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

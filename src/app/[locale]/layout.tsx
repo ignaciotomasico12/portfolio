@@ -10,6 +10,8 @@ import { MetaProps } from "@/types/layout";
 import "./globals.css"
 import { getTranslations } from "next-intl/server";
 import ScrollToTop from '@/components/scroll-to-top';
+import SplashCursor from '@/components/ui/splash-cursor';
+import CustomCursor from '@/components/ui/custom-cursor';
 
 const firaCode = Fira_Code({
     subsets: ['latin'],
@@ -68,6 +70,8 @@ export default async function LocaleLayout({
             </main>
             <footer></footer>
             <ScrollToTop />
+            <SplashCursor />
+            <CustomCursor />
           </NextIntlClientProvider>
         </body>
       </html>
