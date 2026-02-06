@@ -6,7 +6,7 @@ export default function About() {
     const about = useTranslations('about');
 
     return (
-        <section id="about" className="w-full flex flex-nowrap items-start justify-between h-screen gap-12">
+        <section id="about" className="w-full flex flex-nowrap items-start justify-between gap-12">
             <div className="w-2/5">
                 <div className="w-auto h-auto rounded-lg overflow-hidden border-2 border-grey-900">
                     <Image

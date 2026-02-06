@@ -37,5 +37,33 @@
       "p1": "Hola, soy Ignacio Tomás Floría, soy desarrollador Frontend y me encanta crear y desarrollar proyectos nuevos y desafiantes que me permitan seguir aprendiendo y creciendo como profesional. Empecé a programar hace unos pocos años, cuando salí del Bachillerato y decidí cursar un grado superior en Redes Informáticas. Ahí, aunque fuese poco, aprendí las nociones básicas de la programación web con HTML y CSS. Desde entonces gracias a un compañero y buen amigo, que me enseñó casi todo lo que sé acerca de la programación web, me he ido especializando en diversos lenguajes de programación web.",
       "p2": "He podido participar en distintos proyectos en mi primer trabajo como desarrollador web, que van desde una aplicación móvil para hacer reservas de pistas de pádel hasta una Intranet. En estos pocos años como desarrollador web, he podido aprender y trabajar con distintos lenguajes de programación web."
     }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "ntt": {
+      "dates": "Octubre 2024 - Actualidad",
+      "name": "NTT Data",
+      "location": "Zaragoza, España",
+      "role": "Senior Engineer - Desarrollador Frontend",
+      "responsibilities": {
+        "1": "Como frontend ayudando a definir la arquitectura y la estrategia de código, así como las pruebas unitarias y de integración para una aplicación SaaS de seguimiento para que grandes clientes administren sus productos y envíos. Trabajando con React Query, Next JS, Tailwind, diseño de UI/UX y testing con Jest.",
+        "2": "Desarrollo de una web app responsiva para escanear códigos QR y códigos de barras para el envio y seguimiento de datos de dispositivos reales."
+      },
+      "skills": {
+        "1": "React",
+        "2": "Next JS",
+        "3": "TypeScript",
+        "4": "Tailwind CSS",
+        "5": "Jest",
+        "6": "React Query",
+        "7": "Testing Library",
+        "8": "Git",
+        "9": "GitHub",
+        "10": "Jira",
+        "11": "Docker",
+        "12": "Agile",
+        "13": "CI/CD"
+      }
+    }
   }
 }

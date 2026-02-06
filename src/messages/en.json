@@ -37,5 +37,33 @@
       "p1": "Hi, I'm Ignacio Tomás Floría, I'm a Frontend developer and I love creating and developing new and challenging projects that allow me to continue learning and growing as a professional. I started programming a few years ago, when I finished High School and decided to study a higher-level degree in Computer Networks. There, although it was little, I learned the basics of web programming with HTML and CSS. Since then, thanks to a colleague and good friend, who taught me almost everything I know about web programming, I have been specializing in various web programming languages.",
       "p2": "I have been able to participate in different projects in my first job as a web developer, ranging from a mobile application for booking paddle tennis courts to an Intranet. In these few years as a web developer, I have been able to learn and work with different web programming languages."
     }
+  },
+  "experience": {
+    "title": "Experience",
+    "ntt": {
+      "dates": "October 2024 - Present",
+      "name": "NTT Data",
+      "location": "Zaragoza, Spain",
+      "role": "Senior Engineer - Frontend Developer",
+      "responsibilities": {
+        "1": "As a frontend helping to define the architecture and code strategy, as well as unit and integration tests for a tracking SaaS application for large clients to manage their products and shipments. Working with React Query, Next JS, Tailwind, UI/UX design and testing with Jest.",
+        "2": "Development of a responsive web app to scan QR codes and barcodes for the shipment and tracking of data from real devices."
+      },
+      "skills": {
+        "1": "React",
+        "2": "Next JS",
+        "3": "TypeScript",
+        "4": "Tailwind CSS",
+        "5": "Jest",
+        "6": "React Query",
+        "7": "Testing Library",
+        "8": "Git",
+        "9": "GitHub",
+        "10": "Jira",
+        "11": "Docker",
+        "20": "Agile",
+        "23": "CI/CD"
+      }
+    }
   }
 }
