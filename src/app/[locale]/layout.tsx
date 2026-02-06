@@ -13,6 +13,7 @@ import { getTranslations } from "next-intl/server";
 import ScrollToTop from '@/components/scroll-to-top';
 import SplashCursor from '@/components/splash-cursor';
 import CustomCursor from '@/components/custom-cursor';
+import PageTransition from '@/components/layout/page-transition';
 
 const firaCode = Fira_Code({
     subsets: ['latin'],
@@ -66,9 +67,9 @@ export default async function LocaleLayout({
               }}
             />
             <Header />
-            <main className="mx-auto max-w-[1250px] min-h-screen w-full relative z-10 flex flex-col items-center justify-start mt-[-82px]">
+            <PageTransition>
               {children}
-            </main>
+            </PageTransition>
             <Footer />
             <ScrollToTop />
             <SplashCursor />

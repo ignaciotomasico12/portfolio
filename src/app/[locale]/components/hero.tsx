@@ -26,10 +26,20 @@ export default function Hero() {
     return (
         <section className="w-full flex flex-nowrap items-center justify-between h-screen relative" id="hero">
             <div className="w-[55%] flex flex-col items-start justify-start gap-4">
-                <h1 className="text-[5.5rem] w-[90%] font-medium text-left text-primary-500 tracking-[-2px] leading-[100px]">
+                <motion.h1 
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="text-[5.5rem] w-[90%] font-medium text-left text-primary-500 tracking-[-2px] leading-[100px]"
+                >
                     {hero('title')}
-                </h1>
-                <h2 className="text-[30px] text-left text-grey-900">
+                </motion.h1>
+                <motion.h2 
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-[30px] text-left text-grey-900"
+                >
                     {hero('subtitle')}{" "}
                     <TypewriterLoop
                         words={[
@@ -41,21 +51,39 @@ export default function Hero() {
                         className="text-grey-900"
                         cursorClassName="bg-grey-900 h-4 lg:h-8 w-[2px]"
                     />
-                </h2>
-                <p className="text-left">{hero('description')}</p>
-                <Link href={SOCIAL_MEDIA.email} target='blank' aria-label={'Email'}>
-                    <Button 
-                        variant="outline" className="gap-3" 
-                        onMouseEnter={() => emailRef.current?.startAnimation()} 
-                        onMouseLeave={() => emailRef.current?.stopAnimation()}
-                    >
-                        <MailIcon size={20} ref={emailRef} /> {hero('button')}
-                    </Button>
-                </Link>
+                </motion.h2>
+                <motion.p 
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="text-left"
+                >
+                    {hero('description')}
+                </motion.p>
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                    <Link href={SOCIAL_MEDIA.email} target='blank' aria-label={'Email'}>
+                        <Button 
+                            variant="outline" className="gap-3" 
+                            onMouseEnter={() => emailRef.current?.startAnimation()} 
+                            onMouseLeave={() => emailRef.current?.stopAnimation()}
+                        >
+                            <MailIcon size={20} ref={emailRef} /> {hero('button')}
+                        </Button>
+                    </Link>
+                </motion.div>
             </div>
-            <div className="w-[45%] flex items-center justify-center">
+            <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="w-[45%] flex items-center justify-center"
+            >
                 <AnimatedLogo />
-            </div>
+            </motion.div>
             <AnimatePresence>
                 {showScrollIndicator && (
                     <motion.div 

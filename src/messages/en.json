@@ -60,8 +60,8 @@
         "9": "GitHub",
         "10": "Jira",
         "11": "Docker",
-        "20": "Agile",
-        "23": "CI/CD"
+        "12": "Agile",
+        "13": "CI/CD"
       }
     },
     "avanade": {
@@ -118,7 +118,19 @@
       }
     }
   },
+  "projects": {
+    "title": "Selected Projects",
+    "project1": {
+      "title": "IFY Zaragoza",
+      "description": "Web platform with React connected to a Database, user and access permission management. Made with Mongo DB, Express, React and Node JS."
+    },
+    "project2": {
+      "title": "Statify",
+      "description": "App connected to the Spotify API to show your information and your favorite artists. Made with Next JS, React, Tailwind and React Query."
+    }
+  },
   "footer": {
-    "text": "Made by Ignacio Tomás. Zaragoza {year}."
+    "text-1": "Made with",
+    "text-2": "by Ignacio Tomás Floría. Zaragoza {year}."
   }
 }

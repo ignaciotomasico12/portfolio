@@ -3,6 +3,8 @@ import { Language, SocialMedia } from "@/types/utils"
 import { ES, GB } from 'country-flag-icons/react/1x1'
 import { useTranslations } from "next-intl"
 
+import { Project } from "@/types/project"
+
 export const STORAGE_PREFIX = "portfolio-app"
 
 export const STORAGE_KEYS = {
@@ -104,6 +106,28 @@ export const EXPERIENCE = (): Experience[] => {
                 experience('trendico.skills.11'),
                 experience('trendico.skills.12')
             ],
+        }
+    ]
+}
+
+export const PROJECTS = (): Project[] => {
+    const p = useTranslations('projects');
+
+    return [
+        {
+            title: p('project1.title'),
+            description: p('project1.description'),
+            image: '/images/projects/IFYZaragoza.png',
+            tags: ['React', 'Next JS', 'Chakra UI', 'Sanity', 'Sass'],
+            liveUrl: 'https://www.ifyzaragoza.com/'
+        },
+        {
+            title: p('project2.title'),
+            description: p('project2.description'),
+            image: '/images/projects/Statify.png',
+            tags: ['TypeScript', 'Node JS', 'React', 'Tailwind', 'React Query'],
+            githubUrl: 'https://github.com/ignaciotomasico12/Statify',
+            liveUrl: 'https://statify-app.vercel.app/'
         }
     ]
 }

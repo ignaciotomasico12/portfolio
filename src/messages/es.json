@@ -118,6 +118,17 @@
       }
     }
   },
+  "projects": {
+    "title": "Proyectos Seleccionados",
+    "project1": {
+      "title": "IFY Zaragoza",
+      "description": "Web app responsiva de viajes y cursos escolares en Irlanda. Conectada a Sanity como gestor de contenido. Hecha con Next JS, React, Chackra UI y Sanity."
+    },
+    "project2": {
+      "title": "Statify",
+      "description": "App conectada a la API de Spotify para mostrar tu información y tus artistas favoritos. Hecha con Next JS, React, Tailwind y React Query."
+    }
+  },
   "footer": {
     "text-1": "Hecho con",
     "text-2": "por Ignacio Tomás. Zaragoza {year}."
