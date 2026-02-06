@@ -9,6 +9,7 @@ import Header from '@/components/layout/header';
 import { MetaProps } from "@/types/layout";
 import "./globals.css"
 import { getTranslations } from "next-intl/server";
+import ScrollToTop from '@/components/scroll-to-top';
 
 const firaCode = Fira_Code({
     subsets: ['latin'],
@@ -62,10 +63,11 @@ export default async function LocaleLayout({
               }}
             />
             <Header />
-            <main className="min-h-screen w-full relative z-10">
+            <main className="mx-auto max-w-[1280px] min-h-screen w-full relative z-10 flex flex-col items-center justify-start mt-[-82px] mb-80">
               {children}
             </main>
             <footer></footer>
+            <ScrollToTop />
           </NextIntlClientProvider>
         </body>
       </html>

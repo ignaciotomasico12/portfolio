@@ -18,5 +18,17 @@
         "spanish": "Español"
       }
     }
+  },
+  "hero": {
+    "title": "Ignacio Tomás",
+    "subtitle": "Soy",
+    "subtitle_words": {
+      "word1": "Desarrollador Web",
+      "word2": "Desarrollador Fronend",
+      "word3": "Entusiasta",
+      "word4": "Diseñador UI/UX"
+    },
+    "description": "Tengo 5 años de experiencia como desarrollador de software especializado en Frontend con React y Next JS. He estado en diversos proyectos desarrollando plataformas web con React y con Next JS para clientes grandes. He ayudado a mejorar y a finalizar proyectos en marcha que necesitaban un empujón para salir adelante. Y me he estado formando y desarrollando durante todos estos años",
+    "button": "Contacta conmigo"
   }
 }

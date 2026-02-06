@@ -18,5 +18,17 @@
         "spanish": "Spanish"
       }
     }
+  },
+  "hero": {
+    "title": "Ignacio Tomás Floría",
+    "subtitle": "I'm",
+    "subtitle_words": {
+      "word1": "Web Developer",
+      "word2": "Frontend Developer",
+      "word3": "Enthusiast",
+      "word4": "UI/UX Designer"
+    },
+    "description": "I have 5 years of experience as a software developer specializing in Frontend with React and Next JS. I have been in various projects developing web platforms with React and Next JS for large clients. I have helped improve and finalize projects in progress that needed a push to move forward. And I have been training and developing during all these years",
+    "button": "Contact me"
   }
 }
