@@ -8,14 +8,16 @@ export default function About() {
     return (
         <section id="about" className="w-full flex flex-nowrap items-start justify-between gap-12">
             <div className="w-2/5">
-                <div className="w-auto h-auto rounded-lg overflow-hidden border-2 border-grey-900">
-                    <Image
-                        src="/images/about.jpg"
-                        alt="About"
-                        width={380}
-                        height={450}
-                        className="w-full h-full object-cover"
-                    />
+                <div className="w-[380px] h-[530px] rounded-lg border-2 border-grey-900 relative">
+                    <div className="absolute -top-5 -left-5 w-[380px] h-[530px]">
+                        <Image
+                            src="/images/about.webp"
+                            alt="About"
+                            width={380}
+                            height={530}
+                            className="w-full h-full object-cover rounded-lg grayscale"
+                        />
+                    </div>
                 </div>
             </div>
             <div className="w-3/5 flex flex-col gap-6">

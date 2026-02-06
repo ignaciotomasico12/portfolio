@@ -77,7 +77,7 @@ export default function Header() {
                             onMouseEnter={() => githubRef.current?.startAnimation()} 
                             onMouseLeave={() => githubRef.current?.stopAnimation()}
                         >
-                            <GithubIcon size={20} ref={githubRef} />
+                            <GithubIcon size={24} ref={githubRef}/>
                         </Button>
                     </Link>
                     <Link href={SOCIAL_MEDIA.linkedin} target='blank' aria-label={'LinkedIn'}>
@@ -113,7 +113,6 @@ export default function Header() {
                         </DropdownMenuTrigger>
                         <DropdownMenuContent className="w-40" align="end">
                             <DropdownMenuGroup>
-                                <DropdownMenuLabel>{header('languages.menu_title')}</DropdownMenuLabel>
                                 {LANGUAGES.map((language) => (
                                     <DropdownMenuItem
                                         className="flex justify-between gap-2 items-center"

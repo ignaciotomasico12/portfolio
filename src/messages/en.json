@@ -11,7 +11,6 @@
     "email_button": "Send me an email",
     "linkedin_button": "View my LinkedIn",
     "languages": {
-      "menu_title": "Languages",
       "menu_button": "Change Language",
       "options": {
         "english": "English",
@@ -65,5 +64,8 @@
         "23": "CI/CD"
       }
     }
+  },
+  "footer": {
+    "text": "Made by Ignacio Tomás. Zaragoza {year}."
   }
 }

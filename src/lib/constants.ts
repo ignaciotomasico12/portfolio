@@ -28,7 +28,7 @@ export const EXPERIENCE = (): Experience[] => {
             dates: experience('ntt.dates'),
             company: experience('ntt.name'),
             location: experience('ntt.location'),
-            logo: '/images/experience/ntt_data.png',
+            logo: '/images/experience/ntt_data.jpg',
             role: experience('ntt.role'),
             responsibilities: [
                 experience('ntt.responsibilities.1'),
@@ -48,6 +48,61 @@ export const EXPERIENCE = (): Experience[] => {
                 experience('ntt.skills.11'),
                 experience('ntt.skills.12'),
                 experience('ntt.skills.13')
+            ],
+        },
+        {
+            dates: experience('avanade.dates'),
+            company: experience('avanade.name'),
+            location: experience('avanade.location'),
+            logo: '/images/experience/avanade.webp',
+            role: experience('avanade.role'),
+            responsibilities: [
+                experience('avanade.responsibilities.1'),
+                experience('avanade.responsibilities.2'),
+                experience('avanade.responsibilities.3'),
+                experience('avanade.responsibilities.4')
+            ],
+            skills: [
+                experience('avanade.skills.1'),
+                experience('avanade.skills.2'),
+                experience('avanade.skills.3'),
+                experience('avanade.skills.4'),
+                experience('avanade.skills.5'),
+                experience('avanade.skills.6'),
+                experience('avanade.skills.7'),
+                experience('avanade.skills.8'),
+                experience('avanade.skills.9'),
+                experience('avanade.skills.10'),
+                experience('avanade.skills.11'),
+                experience('avanade.skills.12'),
+                experience('avanade.skills.13'),
+                experience('avanade.skills.14')
+            ],
+        },
+        {
+            dates: experience('trendico.dates'),
+            company: experience('trendico.name'),
+            location: experience('trendico.location'),
+            logo: '/images/experience/trendico.webp',
+            role: experience('trendico.role'),
+            responsibilities: [
+                experience('trendico.responsibilities.1'),
+                experience('trendico.responsibilities.2'),
+                experience('trendico.responsibilities.3')
+            ],
+            skills: [
+                experience('trendico.skills.1'),
+                experience('trendico.skills.2'),
+                experience('trendico.skills.3'),
+                experience('trendico.skills.4'),
+                experience('trendico.skills.5'),
+                experience('trendico.skills.6'),
+                experience('trendico.skills.7'),
+                experience('trendico.skills.8'),
+                experience('trendico.skills.9'),
+                experience('trendico.skills.10'),
+                experience('trendico.skills.11'),
+                experience('trendico.skills.12')
             ],
         }
     ]

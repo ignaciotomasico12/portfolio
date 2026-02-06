@@ -11,7 +11,6 @@
     "email_button": "Envíame un email",
     "linkedin_button": "Ver mi LinkedIn",
     "languages": {
-      "menu_title": "Idiomas",
       "menu_button": "Cambiar Idioma",
       "options": {
         "english": "Inglés",
@@ -43,7 +42,7 @@
     "ntt": {
       "dates": "Octubre 2024 - Actualidad",
       "name": "NTT Data",
-      "location": "Zaragoza, España",
+      "location": "Zaragoza, España - Hibrido",
       "role": "Senior Engineer - Desarrollador Frontend",
       "responsibilities": {
         "1": "Como frontend ayudando a definir la arquitectura y la estrategia de código, así como las pruebas unitarias y de integración para una aplicación SaaS de seguimiento para que grandes clientes administren sus productos y envíos. Trabajando con React Query, Next JS, Tailwind, diseño de UI/UX y testing con Jest.",
@@ -64,6 +63,63 @@
         "12": "Agile",
         "13": "CI/CD"
       }
+    },
+    "avanade": {
+      "dates": "Octubre 2022 - Octubre 2024",
+      "name": "Avanade",
+      "location": "Barcelona, España - Remoto",
+      "role": "Analyst - Desarrollador Frontend",
+      "responsibilities": {
+        "1": "Desarrollé una plataforma web con React conectada a SharePoint para una empresa hotelera para mostrar información, noticias y poder consultar información, documentos y personal de la empresa.",
+        "2": "Colaboración en un proyecto de banca web para un gran cliente español, para elaborar desarrollos de frontend con Angular.",
+        "3": "Gestión de distintos proyectos creando y supervisando tareas en conjunto con equipos con la metodología SCRUM",
+        "4": "Gestión de código con Git y Git Flow con Azure DevOps."
+      },
+      "skills": {
+        "1": "React",
+        "2": "Angular",
+        "3": "TypeScript",
+        "4": "HTML",
+        "5": "CSS",
+        "6": "SASS",
+        "7": "JavaScript",
+        "8": "SharePoint",
+        "9": "Git",
+        "10": "GitHub",
+        "11": "Azure DevOps",
+        "12": "Jira",
+        "13": "Agile",
+        "14": "SCRUM"
+      }
+    },
+    "trendico": {
+      "dates": "Enero 2021 - Octubre 2022",
+      "name": "Trendico",
+      "location": "Zaragoza, España - Presencial",
+      "role": "Desarrollador Web",
+      "responsibilities": {
+        "1": "Desarrollo de una Intranet en REACT conectada a Base de Datos, gestión de usuarios y permisos de acceso. Hecha con Mongo DB, Express, React y Node JS.",
+        "2": "Desarrollo Front-End de una App móvil con IONIC, para Android e IOS.",
+        "3": "Mantenimiento y rediseño de una e-commerce hecha con PHP para mejorar el diseño actual a uno más moderno, responsive y con una mejor UI/UX."
+      },
+      "skills": {
+        "1": "React",
+        "2": "Node JS",
+        "3": "Express",
+        "4": "HTML",
+        "5": "CSS",
+        "6": "SASS",
+        "7": "JavaScript",
+        "8": "Mongo DB",
+        "9": "Git",
+        "10": "GitHub",
+        "11": "MySQL",
+        "12": "Postgr SQL"
+      }
     }
+  },
+  "footer": {
+    "text-1": "Hecho con",
+    "text-2": "por Ignacio Tomás. Zaragoza {year}."
   }
 }

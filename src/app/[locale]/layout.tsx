@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { LocaleInitializer } from './locale-initializer';
 import { NextIntlClientProvider } from 'next-intl';
 import Header from '@/components/layout/header';
+import Footer from '@/components/layout/footer';
 import { MetaProps } from "@/types/layout";
 import "./globals.css"
 import { getTranslations } from "next-intl/server";
@@ -68,7 +69,7 @@ export default async function LocaleLayout({
             <main className="mx-auto max-w-[1250px] min-h-screen w-full relative z-10 flex flex-col items-center justify-start mt-[-82px]">
               {children}
             </main>
-            <footer></footer>
+            <Footer />
             <ScrollToTop />
             <SplashCursor />
             <CustomCursor />

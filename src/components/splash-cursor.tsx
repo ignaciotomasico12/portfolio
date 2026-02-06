@@ -11,9 +11,9 @@ function SplashCursor({
   PRESSURE = 0.1,
   PRESSURE_ITERATIONS = 20,
   CURL = 3,
-  SPLAT_RADIUS = 0.15,
-  SPLAT_FORCE = 2800,
-  SHADING = true,
+  SPLAT_RADIUS = 0.095,
+  SPLAT_FORCE = 2000,
+  SHADING = false,
   COLOR_UPDATE_SPEED = 10,
   BACK_COLOR = { r: 0.5, g: 0, b: 0 },
   TRANSPARENT = true
@@ -895,7 +895,7 @@ function SplashCursor({
 
       // Apply intensity scaling for the effect (similar to original 0.15 factor)
       // We can make it slightly more subtle by using a lower factor if needed.
-      const intensity = 0.10;
+      const intensity = 0.03;
       
       return { 
           r: baseColor.r * intensity, 
