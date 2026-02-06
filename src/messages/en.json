@@ -2,7 +2,21 @@
   "global": {
     "metadata": {
       "title": "Ignacio Tomás | Frontend Developer",
-      "description": "Portfolio personal de Ignacio Tomás. Accede a todos mis proyectos y descubre de lo que soy capaz."
+      "description": "Ignacio Tomás's personal portfolio. Access all my projects and discover what I'm capable of."
+    }
+  },
+  "header": {
+    "cv_button": "Download CV",
+    "github_button": "View my GitHub",
+    "email_button": "Send me an email",
+    "linkedin_button": "View my LinkedIn",
+    "languages": {
+      "menu_title": "Languages",
+      "menu_button": "Change Language",
+      "options": {
+        "english": "English",
+        "spanish": "Spanish"
+      }
     }
   }
 }

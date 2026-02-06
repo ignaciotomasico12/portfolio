@@ -4,5 +4,19 @@
       "title": "Ignacio Tomás | Frontend Developer",
       "description": "Portfolio personal de Ignacio Tomás. Accede a todos mis proyectos y descubre de lo que soy capaz."
     }
+  },
+  "header": {
+    "cv_button": "Descargar CV",
+    "github_button": "Ver mi GitHub",
+    "email_button": "Envíame un email",
+    "linkedin_button": "Ver mi LinkedIn",
+    "languages": {
+      "menu_title": "Idiomas",
+      "menu_button": "Cambiar Idioma",
+      "options": {
+        "english": "Inglés",
+        "spanish": "Español"
+      }
+    }
   }
 }
