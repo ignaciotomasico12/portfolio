@@ -63,6 +63,59 @@
         "20": "Agile",
         "23": "CI/CD"
       }
+    },
+    "avanade": {
+      "dates": "October 2022 - October 2024",
+      "name": "Avanade",
+      "location": "Barcelona, Spain",
+      "role": "Analyst - Frontend Developer",
+      "responsibilities": {
+        "1": "I developed a web platform with React connected to SharePoint for a hotel company to display information, news and be able to consult company information and documents.",
+        "2": "Collaboration in a web banking project for a large Spanish client, to carry out frontend developments with Angular.",
+        "3": "Management of different projects creating and supervising tasks together with teams with the SCRUM methodology",
+        "4": "Code management with Git and Git Flow with Azure DevOps."
+      },
+      "skills": {
+        "1": "React",
+        "2": "Angular",
+        "3": "TypeScript",
+        "4": "HTML",
+        "5": "CSS",
+        "6": "SASS",
+        "7": "JavaScript",
+        "8": "SharePoint",
+        "9": "Git",
+        "10": "GitHub",
+        "11": "Azure DevOps",
+        "12": "Jira",
+        "13": "Agile",
+        "14": "SCRUM"
+      }
+    },
+    "trendico": {
+      "dates": "January 2021 - October 2022",
+      "name": "Trendico",
+      "location": "Zaragoza, Spain",
+      "role": "Web Developer",
+      "responsibilities": {
+        "1": "Development of an Intranet in REACT connected to a Database, user and access permission management. Made with Mongo DB, Express, React and Node JS.",
+        "2": "Front-End Development of a mobile app with IONIC, for Android and IOS.",
+        "3": "Maintenance and redesign of an e-commerce made with PHP to improve the current design to a more modern, responsive one with better UI/UX."
+      },
+      "skills": {
+        "1": "React",
+        "2": "Node JS",
+        "3": "Express",
+        "4": "HTML",
+        "5": "CSS",
+        "6": "SASS",
+        "7": "JavaScript",
+        "8": "Mongo DB",
+        "9": "Git",
+        "10": "GitHub",
+        "11": "MySQL",
+        "12": "Postgr SQL"
+      }
     }
   },
   "footer": {
