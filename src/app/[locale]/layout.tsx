@@ -14,6 +14,7 @@ import ScrollToTop from '@/components/scroll-to-top';
 import SplashCursor from '@/components/splash-cursor';
 import CustomCursor from '@/components/custom-cursor';
 import PageTransition from '@/components/layout/page-transition';
+import { ParticlesBackground } from '@/components/ui/particles-background';
 
 const firaCode = Fira_Code({
     subsets: ['latin'],
@@ -66,6 +67,7 @@ export default async function LocaleLayout({
                 backgroundImage: `radial-gradient(circle 500px at 50% 300px, rgba(16,185,129,0.35), transparent)`,
               }}
             />
+            <ParticlesBackground />
             <Header />
             <main className="relative z-10 w-full max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-8">
               <PageTransition>

@@ -8,6 +8,7 @@ import { motion } from "motion/react";
 import { Link } from "@/navigation";
 import { GithubIcon } from "@/components/ui/icons/GithubIcon";
 import { ExternalLinkIcon } from "@/components/ui/icons/ExternalLinkIcon";
+import { getTechIcon } from "@/components/ui/tech-icons";
 
 export default function Projects() {
     const t = useTranslations('projects');
@@ -52,7 +53,7 @@ export default function Projects() {
                     <motion.div 
                         key={project.title} 
                         variants={itemVariants}
-                        whileHover={{ y: -10 }}
+                        whileHover={{ y: -10, scale: 1.02 }}
                         className="flex flex-col gap-3 md:gap-4 bg-background-secondary/20 border-2 border-grey-900 rounded-xl p-4 md:p-5 hover:border-primary-500/50 transition-colors duration-300 group shadow-md hover:shadow-xl"
                     >
                         <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-2">
@@ -92,8 +93,9 @@ export default function Projects() {
                             {project.tags.map((tag) => (
                                 <span 
                                     key={tag} 
-                                    className="px-2.5 md:px-3 py-1 bg-primary-500/5 text-primary-500 text-xs font-mono rounded-full border border-primary-500/20"
+                                    className="px-2.5 md:px-3 py-1 bg-primary-500/5 text-primary-500 text-xs font-mono rounded-full border border-primary-500/20 flex items-center gap-1.5"
                                 >
+                                    {getTechIcon(tag)}
                                     {tag}
                                 </span>
                             ))}

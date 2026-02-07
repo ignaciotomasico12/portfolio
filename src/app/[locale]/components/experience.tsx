@@ -6,6 +6,7 @@ import { Triangle } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { getTechIcon } from "@/components/ui/tech-icons";
 
 export default function Experience() {
     const experience = useTranslations('experience');
@@ -104,8 +105,9 @@ export default function Experience() {
                                 <motion.span 
                                     key={skill} 
                                     whileHover={{ y: -2 }}
-                                    className="px-3 md:px-4 py-1 md:py-1.5 bg-primary-500/10 text-primary-500 text-xs md:text-sm font-base rounded-full border border-primary-400 hover:bg-primary-500/20 hover:border-primary-600 transition-colors duration-300 cursor-default"
+                                    className="px-3 md:px-4 py-1 md:py-1.5 bg-primary-500/10 text-primary-500 text-xs md:text-sm font-base rounded-full border border-primary-400 hover:bg-primary-500/20 hover:border-primary-600 transition-colors duration-300 cursor-default flex items-center gap-2"
                                 >
+                                    {getTechIcon(skill)}
                                     {skill}
                                 </motion.span>
                             ))}

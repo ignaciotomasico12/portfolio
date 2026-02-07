@@ -1,8 +1,9 @@
 'use client';
 
 import { cn } from "@/lib/utils"
-import { useEffect, useRef, useState } from "react"
-import { Button } from "../ui/button";
+import { useRef, useEffect, useState } from "react"
+import { motion } from "motion/react"
+import { Button, buttonVariants } from "../ui/button";
 import { Link, usePathname, useRouter } from "@/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { DownloadHandle, DownloadIcon } from "../ui/icons/DownloadIcon";
@@ -52,7 +53,10 @@ export default function Header() {
     }
 
     return (
-        <header 
+        <motion.header 
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className={cn(
                 "w-full sticky top-0 z-50 flex items-center justify-between bg-transparent transition-[background-color] duration-300 ease-in-out",
                 scrollStyle && "bg-[rgba(30,45,64,0.4)] border-b border-background-secondary backdrop-blur-[25px]" 
@@ -62,14 +66,17 @@ export default function Header() {
                 <Logo />
                 <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
                     <Link href={`/docs/CV-${locale}-Ignacio-Tomas.pdf`} target='blank' aria-label={header('cv_button')}>
-                        <Button 
-                            variant="outline" className="gap-2 md:gap-3" 
+                        <motion.div 
+                            className={cn(buttonVariants({ variant: "outline" }), "gap-2 md:gap-3")}
+                            whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
                             onMouseEnter={() => downloadRef.current?.startAnimation()} 
                             onMouseLeave={() => downloadRef.current?.stopAnimation()}
                         >
                             <DownloadIcon size={20} ref={downloadRef} /> 
                             <span className="hidden md:inline">{header('cv_button')}</span>
-                        </Button>
+                        </motion.div>
                     </Link>
                     <Link href={SOCIAL_MEDIA.github} target='blank' aria-label={'GitHub'}>
                         <Button
@@ -132,7 +139,7 @@ export default function Header() {
                     </DropdownMenu>
                 </div>
             </div>
-        </header>
+        </motion.header>
     )
 }
 

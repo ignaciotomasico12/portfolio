@@ -5,6 +5,7 @@ import { CodeXmlIcon, CodeXmlIconHandle } from "../ui/icons/CodeXmlIcon";
 import { useRef } from "react";
 import { Link } from "@/navigation";
 import { SOCIAL_MEDIA } from "@/lib/constants";
+import { motion } from "motion/react";
 
 export default function Footer() {
     const t = useTranslations('footer');
@@ -12,7 +13,13 @@ export default function Footer() {
     const codeIconRef = useRef<CodeXmlIconHandle>(null);
 
     return (
-        <footer className="w-full mt-auto relative z-10 bg-transparent border-t border-background-secondary">
+        <motion.footer 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="w-full mt-auto relative z-10 bg-transparent border-t border-background-secondary"
+        >
             <div className="flex items-center justify-center w-full mx-auto max-w-[1250px] px-4 py-3 md:p-4 text-center text-grey-900">
                 <Link
                     href={SOCIAL_MEDIA.github}
@@ -27,6 +34,6 @@ export default function Footer() {
                     <p>{t('text-2', { year: currentYear })}</p>
                 </Link>
             </div>
-        </footer>
+        </motion.footer>
     );
 }

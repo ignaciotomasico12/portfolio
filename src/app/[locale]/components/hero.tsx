@@ -1,12 +1,13 @@
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { TypewriterLoop } from "@/components/typewriter-loop";
 import { SOCIAL_MEDIA } from "@/lib/constants";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { MailIcon, MailIconHandle } from "@/components/ui/icons/MailIcon";
 import { useRef, useState } from "react";
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "motion/react";
+import { motion, useScroll, useMotionValueEvent, AnimatePresence, useTransform } from "motion/react";
 import AnimatedLogo from "@/components/animated-logo";
+import { cn } from "@/lib/utils";
 
 export default function Hero() {
     const hero = useTranslations('hero');
@@ -23,9 +24,12 @@ export default function Hero() {
         }
     });
 
+    const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+    const y2 = useTransform(scrollY, [0, 500], [0, 100]);
+
     return (
         <section className="w-full flex flex-col lg:flex-row items-start justify-start lg:items-center lg:justify-between min-h-screen py-14 lg:py-0 lg:h-screen relative" id="hero">
-            <div className="w-full lg:w-[60%] flex flex-col items-start justify-start gap-3 md:gap-4 order-2 lg:order-1">
+            <motion.div style={{ y: y1 }} className="w-full lg:w-[60%] flex flex-col items-start justify-start gap-3 md:gap-4 order-2 lg:order-1">
                 <motion.h1 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -66,17 +70,21 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.4 }}
                 >
                     <Link href={SOCIAL_MEDIA.email} target='blank' aria-label={'Email'}>
-                        <Button 
-                            variant="outline" className="gap-2 md:gap-3" 
+                        <motion.div 
+                            className={cn(buttonVariants({ variant: "outline" }), "gap-2 md:gap-3")}
+                            whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
                             onMouseEnter={() => emailRef.current?.startAnimation()} 
                             onMouseLeave={() => emailRef.current?.stopAnimation()}
                         >
                             <MailIcon size={20} ref={emailRef} /> {hero('button')}
-                        </Button>
+                        </motion.div>
                     </Link>
                 </motion.div>
-            </div>
+            </motion.div>
             <motion.div 
+                style={{ y: y2 }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -95,7 +103,7 @@ export default function Hero() {
                         transition={{ duration: 0.5 }}
                         className="absolute bottom-2 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
                     >
-                        <div className="w-[24px] h-[40px] border-2 border-primary-500 rounded-full flex justify-center p-1">
+                        <div className="w-[28px] h-[42px] border-2 border-primary-500 rounded-full flex justify-center p-1">
                             <motion.div 
                                 animate={{ y: [0, 8, 0] }}
                                 transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
