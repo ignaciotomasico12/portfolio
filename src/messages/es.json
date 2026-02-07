@@ -66,7 +66,7 @@
     },
     "avanade": {
       "dates": "Octubre 2022 - Octubre 2024",
-      "name": "Avanade",
+      "name": "Avanade Spain",
       "location": "Barcelona, España - Remoto",
       "role": "Analyst - Desarrollador Frontend",
       "responsibilities": {
@@ -127,7 +127,11 @@
     "project2": {
       "title": "Statify",
       "description": "App conectada a la API de Spotify para mostrar tu información y tus artistas favoritos. Hecha con Next JS, React, Tailwind y React Query."
-    }
+    },
+    "project3": {
+      "title": "AEMET Weather App",
+      "description": "Web app responsiva para consultar el tiempo en España. Conectada a la API de AEMET. Hecha con Next JS, React, Tailwind."
+    } 
   },
   "footer": {
     "text-1": "Hecho con",

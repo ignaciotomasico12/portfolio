@@ -124,10 +124,18 @@ export const PROJECTS = (): Project[] => {
         {
             title: p('project2.title'),
             description: p('project2.description'),
-            image: '/images/projects/Statify.png',
+            image: '/images/projects/Statify-App.png',
             tags: ['TypeScript', 'Node JS', 'React', 'Tailwind', 'React Query'],
             githubUrl: 'https://github.com/ignaciotomasico12/Statify',
             liveUrl: 'https://statify-app.vercel.app/'
+        },
+        {
+            title: p('project3.title'),
+            description: p('project3.description'),
+            image: '/images/projects/Weather-App.png',
+            tags: ['TypeScript', 'Next JS', 'React', 'Tailwind', 'React Query'],
+            githubUrl: 'https://github.com/ignaciotomasico12/aemet-weather',
+            liveUrl: 'https://aemet-weather.vercel.app/'
         }
     ]
 }

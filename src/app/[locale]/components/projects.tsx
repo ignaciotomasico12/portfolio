@@ -53,14 +53,14 @@ export default function Projects() {
                         key={project.title} 
                         variants={itemVariants}
                         whileHover={{ y: -10 }}
-                        className="flex flex-col gap-4 bg-background-secondary/20 border border-grey-900 rounded-2xl p-5 hover:border-primary-500/50 transition-colors duration-300 group shadow-md hover:shadow-xl"
+                        className="flex flex-col gap-4 bg-background-secondary/20 border-2 border-grey-900 rounded-xl p-5 hover:border-primary-500/50 transition-colors duration-300 group shadow-md hover:shadow-xl"
                     >
-                        <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-2">
+                        <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-2">
                             <Image 
                                 src={project.image} 
                                 alt={project.title} 
                                 fill
-                                className="grayscale group-hover:grayscale-0 transition-all duration-500 scale-100"
+                                className="object-fill grayscale group-hover:grayscale-0 transition-all duration-500 scale-100"
                             />
                             <div className="absolute inset-0 bg-primary-500/0 group-hover:bg-primary-500/10 transition-all duration-500" />
                         </div>
