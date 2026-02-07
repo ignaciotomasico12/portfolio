@@ -25,7 +25,7 @@ export default function Hero() {
 
     return (
         <section className="w-full flex flex-col lg:flex-row items-start justify-start lg:items-center lg:justify-between min-h-screen py-14 lg:py-0 lg:h-screen relative" id="hero">
-            <div className="w-full lg:w-[55%] flex flex-col items-start justify-start gap-3 md:gap-4 order-2 lg:order-1">
+            <div className="w-full lg:w-[60%] flex flex-col items-start justify-start gap-3 md:gap-4 order-2 lg:order-1">
                 <motion.h1 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -80,7 +80,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="w-full lg:w-[45%] flex items-center justify-center my-2 lg:my-0 order-1 lg:order-2"
+                className="w-full lg:w-[40%] flex items-center justify-center my-2 lg:my-0 order-1 lg:order-2"
             >
                 <div className="w-full max-w-[280px] md:max-w-[350px] lg:max-w-none">
                     <AnimatedLogo />
