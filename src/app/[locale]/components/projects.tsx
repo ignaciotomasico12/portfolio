@@ -32,7 +32,7 @@ export default function Projects() {
     };
 
     return (
-        <section id="projects" className="w-full flex flex-col items-center justify-start gap-12">
+        <section id="projects" className="w-full flex flex-col items-center justify-start gap-8 md:gap-12">
             <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -46,14 +46,14 @@ export default function Projects() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
-                className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
             >
                 {PROJECTS().map((project) => (
                     <motion.div 
                         key={project.title} 
                         variants={itemVariants}
                         whileHover={{ y: -10 }}
-                        className="flex flex-col gap-4 bg-background-secondary/20 border-2 border-grey-900 rounded-xl p-5 hover:border-primary-500/50 transition-colors duration-300 group shadow-md hover:shadow-xl"
+                        className="flex flex-col gap-3 md:gap-4 bg-background-secondary/20 border-2 border-grey-900 rounded-xl p-4 md:p-5 hover:border-primary-500/50 transition-colors duration-300 group shadow-md hover:shadow-xl"
                     >
                         <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-2">
                             <Image 
@@ -67,7 +67,7 @@ export default function Projects() {
                         
                         <div className="flex flex-col gap-2">
                             <div className="flex justify-between items-center">
-                                <h3 className="text-xl font-semibold text-primary-500 group-hover:text-primary-800 transition-colors">
+                                <h3 className="text-lg md:text-xl font-semibold text-primary-500 group-hover:text-primary-800 transition-colors">
                                     {project.title}
                                 </h3>
                                 <div className="flex gap-3">
@@ -83,7 +83,7 @@ export default function Projects() {
                                     )}
                                 </div>
                             </div>
-                            <p className="text-grey-900 text-sm leading-relaxed line-clamp-2">
+                            <p className="text-grey-900 text-xs sm:text-sm leading-relaxed line-clamp-2">
                                 {project.description}
                             </p>
                         </div>
@@ -92,7 +92,7 @@ export default function Projects() {
                             {project.tags.map((tag) => (
                                 <span 
                                     key={tag} 
-                                    className="px-3 py-1 bg-primary-500/5 text-primary-500 text-xs font-mono rounded-full border border-primary-500/20"
+                                    className="px-2.5 md:px-3 py-1 bg-primary-500/5 text-primary-500 text-xs font-mono rounded-full border border-primary-500/20"
                                 >
                                     {tag}
                                 </span>

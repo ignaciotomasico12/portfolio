@@ -58,16 +58,17 @@ export default function Header() {
                 scrollStyle && "bg-[rgba(30,45,64,0.4)] border-b border-background-secondary backdrop-blur-[25px]" 
             )}
         >
-            <div className="flex items-center justify-between w-full mx-auto max-w-[1250px] p-4">
+            <div className="flex items-center justify-between w-full mx-auto max-w-[1250px] px-4 py-3 md:p-4">
                 <Logo />
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
                     <Link href={`/docs/CV-${locale}-Ignacio-Tomas.pdf`} target='blank' aria-label={header('cv_button')}>
                         <Button 
-                            variant="outline" className="gap-3" 
+                            variant="outline" className="gap-2 md:gap-3" 
                             onMouseEnter={() => downloadRef.current?.startAnimation()} 
                             onMouseLeave={() => downloadRef.current?.stopAnimation()}
                         >
-                            <DownloadIcon size={20} ref={downloadRef} /> {header('cv_button')}
+                            <DownloadIcon size={20} ref={downloadRef} /> 
+                            <span className="hidden md:inline">{header('cv_button')}</span>
                         </Button>
                     </Link>
                     <Link href={SOCIAL_MEDIA.github} target='blank' aria-label={'GitHub'}>

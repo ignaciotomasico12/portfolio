@@ -13,12 +13,12 @@ export default function Footer() {
 
     return (
         <footer className="w-full mt-auto relative z-10 bg-transparent border-t border-background-secondary">
-            <div className="flex items-center justify-center w-full mx-auto max-w-[1250px] p-4 text-center text-grey-900">
+            <div className="flex items-center justify-center w-full mx-auto max-w-[1250px] px-4 py-3 md:p-4 text-center text-grey-900">
                 <Link
                     href={SOCIAL_MEDIA.github}
                     target="_blank"
                     aria-label='Copywright link'
-                    className="text-sm font-medium flex justify-center items-center gap-2"
+                    className="text-xs sm:text-sm font-medium flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2"
                     onMouseEnter={() => codeIconRef.current?.startAnimation()}
                     onMouseLeave={() => codeIconRef.current?.stopAnimation()}
                 >

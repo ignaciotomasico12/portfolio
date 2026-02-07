@@ -7,7 +7,7 @@ import Projects from "./components/projects";
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col gap-24">
+    <div className="w-full flex flex-col gap-16 md:gap-20 lg:gap-24">
       <Hero />
       <About />
       <Projects />

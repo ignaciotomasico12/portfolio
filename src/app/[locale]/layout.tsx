@@ -67,9 +67,11 @@ export default async function LocaleLayout({
               }}
             />
             <Header />
-            <PageTransition>
-              {children}
-            </PageTransition>
+            <main className="relative z-10 w-full max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-8">
+              <PageTransition>
+                {children}
+              </PageTransition>
+            </main>
             <Footer />
             <ScrollToTop />
             <SplashCursor />

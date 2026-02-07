@@ -24,13 +24,13 @@ export default function Hero() {
     });
 
     return (
-        <section className="w-full flex flex-nowrap items-center justify-between h-screen relative" id="hero">
-            <div className="w-[55%] flex flex-col items-start justify-start gap-4">
+        <section className="w-full flex flex-col lg:flex-row items-start justify-start lg:items-center lg:justify-between min-h-screen py-14 lg:py-0 lg:h-screen relative" id="hero">
+            <div className="w-full lg:w-[55%] flex flex-col items-start justify-start gap-3 md:gap-4 order-2 lg:order-1">
                 <motion.h1 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-[5.5rem] w-[90%] font-medium text-left text-primary-500 tracking-[-2px] leading-[100px]"
+                    className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] w-full lg:w-[90%] font-medium text-left text-primary-500 tracking-[-1px] md:tracking-[-2px] leading-tight md:leading-[1.1] lg:leading-[100px]"
                 >
                     {hero('title')}
                 </motion.h1>
@@ -38,7 +38,7 @@ export default function Hero() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-[30px] text-left text-grey-900"
+                    className="text-lg sm:text-xl md:text-2xl lg:text-[30px] text-left text-grey-900"
                 >
                     {hero('subtitle')}{" "}
                     <TypewriterLoop
@@ -56,7 +56,7 @@ export default function Hero() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-left"
+                    className="text-left text-sm sm:text-base"
                 >
                     {hero('description')}
                 </motion.p>
@@ -67,7 +67,7 @@ export default function Hero() {
                 >
                     <Link href={SOCIAL_MEDIA.email} target='blank' aria-label={'Email'}>
                         <Button 
-                            variant="outline" className="gap-3" 
+                            variant="outline" className="gap-2 md:gap-3" 
                             onMouseEnter={() => emailRef.current?.startAnimation()} 
                             onMouseLeave={() => emailRef.current?.stopAnimation()}
                         >
@@ -80,9 +80,11 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="w-[45%] flex items-center justify-center"
+                className="w-full lg:w-[45%] flex items-center justify-center my-2 lg:my-0 order-1 lg:order-2"
             >
-                <AnimatedLogo />
+                <div className="w-full max-w-[280px] md:max-w-[350px] lg:max-w-none">
+                    <AnimatedLogo />
+                </div>
             </motion.div>
             <AnimatePresence>
                 {showScrollIndicator && (
@@ -91,7 +93,7 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 20 }}
                         transition={{ duration: 0.5 }}
-                        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+                        className="absolute bottom-2 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
                     >
                         <div className="w-[24px] h-[40px] border-2 border-primary-500 rounded-full flex justify-center p-1">
                             <motion.div 
@@ -100,7 +102,7 @@ export default function Hero() {
                                 className="w-1.5 h-1.5 bg-primary-500 rounded-full"
                             />
                         </div>
-                        <span className="text-sm font-medium text-primary-500 tracking-widest">Scroll</span>
+                        <span className="text-xs md:text-sm font-medium text-primary-500 tracking-widest">Scroll</span>
                     </motion.div>
                 )}
             </AnimatePresence>

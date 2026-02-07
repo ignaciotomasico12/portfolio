@@ -119,7 +119,7 @@
     }
   },
   "projects": {
-    "title": "Proyectos Seleccionados",
+    "title": "Proyectos",
     "project1": {
       "title": "IFY Zaragoza",
       "description": "Web app responsiva de viajes y cursos escolares en Irlanda. Conectada a Sanity como gestor de contenido. Hecha con Next JS, React, Chackra UI y Sanity."

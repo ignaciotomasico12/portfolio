@@ -20,7 +20,7 @@ export default function AnimatedLogo() {
     const y3 = useTransform(scrollYProgress, [0, 1], [0, -300]);
     const rotate3 = useTransform(scrollYProgress, [0, 1], [0, 15]);
 
-    const viewBox = "0 -750 958 2500";
+    const viewBox = "0 0 958 1000";
 
     // Continuous Levitation Animation
     const floatAnim = (delay: number) => ({
@@ -34,7 +34,16 @@ export default function AnimatedLogo() {
     });
 
     return (
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox={viewBox} xmlSpace="preserve" width="450px"> 
+        <svg 
+            version="1.1" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlnsXlink="http://www.w3.org/1999/xlink" 
+            x="0px" 
+            y="0px" 
+            viewBox={viewBox} 
+            xmlSpace="preserve" 
+            className="w-full h-auto"
+        > 
             <style type="text/css">
                 {
                     "\n\t.st0{fill:#00FFC3;}\n\t.st1{fill:url(#SVGID_1_);}\n\t.st2{fill:url(#SVGID_2_);}\n\t.st3{fill:url(#SVGID_3_);}\n"
