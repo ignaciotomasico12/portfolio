@@ -57,7 +57,7 @@ export default function Experience() {
                             whileInView={{ height: "calc(100% + 24px)" }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.5 }}
-                            className="absolute left-[5px] md:left-[7px] top-8 w-[2px] rounded-full bg-grey-900 group-last:hidden origin-top"
+                            className="absolute left-[5px] md:left-[7px] top-5.5 lg:top-8 w-[2px] rounded-full bg-grey-900 group-last:hidden origin-top"
                         />
                         <motion.div 
                             initial={{ scale: 0 }}
