@@ -129,8 +129,8 @@
       "description": "App connected to the Spotify API to show your information and your favorite artists. Made with Next JS, React, Tailwind and React Query."
     },
     "project3": {
-      "title": "AEMET Weather App",
-      "description": "Responsive web app to check the weather in Spain. Connected to the AEMET API. Made with Next JS, React, Tailwind."
+      "title": "Recipe Expert",
+      "description": "Web made with Next JS, React, Tailwind and Supabase, connected to Gemini API to generate recipes."
     }
   },
   "footer": {

@@ -119,7 +119,7 @@ export const PROJECTS = (): Project[] => {
             description: p('project1.description'),
             image: '/images/projects/IFYZaragoza.png',
             tags: ['React', 'Next JS', 'Chakra UI', 'Sanity', 'Sass'],
-            liveUrl: 'https://www.ifyzaragoza.com/'
+            liveUrl: 'https://www.ifyzaragoza.com'
         },
         {
             title: p('project2.title'),
@@ -127,15 +127,14 @@ export const PROJECTS = (): Project[] => {
             image: '/images/projects/Statify-App.png',
             tags: ['TypeScript', 'Node JS', 'React', 'Tailwind', 'React Query'],
             githubUrl: 'https://github.com/ignaciotomasico12/Statify',
-            liveUrl: 'https://statify-app.vercel.app/'
+            liveUrl: 'https://statify-app.vercel.app'
         },
         {
             title: p('project3.title'),
             description: p('project3.description'),
-            image: '/images/projects/Weather-App.png',
-            tags: ['TypeScript', 'Next JS', 'React', 'Tailwind', 'React Query'],
-            githubUrl: 'https://github.com/ignaciotomasico12/aemet-weather',
-            liveUrl: 'https://aemet-weather.vercel.app/'
+            image: '/images/projects/Recipe-expert.png',
+            tags: ['TypeScript', 'Next JS', 'React', 'Tailwind', 'Supabase', 'Gemini AI'],
+            liveUrl: 'https://recipe-expert.vercel.app'
         }
     ]
 }
