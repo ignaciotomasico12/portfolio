@@ -25,12 +25,11 @@ import {
   SiPhp, 
   SiChakraui, 
   SiSanity,
-  SiGooglegemini,
 } from "react-icons/si";
 import { DiScrum } from "react-icons/di";
 import { VscAzureDevops } from "react-icons/vsc";
 import { FaJava, FaCodeBranch, FaInfinity, FaAngular, FaCode } from "react-icons/fa6";
-import { RiSupabaseFill } from "react-icons/ri";
+import { RiCopilotLine, RiSupabaseFill } from "react-icons/ri";
 
 export const getTechIcon = (techName: string) => {
   const normalized = techName.toLowerCase().replace(/\./g, "").replace(/\s+/g, "");
@@ -100,8 +99,8 @@ export const getTechIcon = (techName: string) => {
       return <FaJava className={iconClass} />;
     case "ci/cd":
       return <FaCodeBranch className={iconClass} />;
-    case "geminiai":
-      return <SiGooglegemini className={iconClass} />;
+    case "groqai":
+      return <RiCopilotLine className={iconClass} />;
     case "supabase":
       return <RiSupabaseFill className={iconClass} />;
     default:
