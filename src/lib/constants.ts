@@ -132,9 +132,9 @@ export const PROJECTS = (): Project[] => {
         {
             title: p('project3.title'),
             description: p('project3.description'),
-            image: '/images/projects/Recipe-expert.png',
+            image: '/images/projects/Cooking-Deck.png',
             tags: ['TypeScript', 'Next JS', 'React', 'Tailwind', 'Supabase', 'Groq AI'],
-            liveUrl: 'https://recipe-expert.vercel.app'
+            liveUrl: 'https://cooking-deck.vercel.app'
         }
     ]
 }
