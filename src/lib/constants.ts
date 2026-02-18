@@ -134,7 +134,7 @@ export const PROJECTS = (): Project[] => {
             description: p('project3.description'),
             image: '/images/projects/Cooking-Deck.png',
             tags: ['TypeScript', 'Next JS', 'React', 'Tailwind', 'Supabase', 'Groq AI'],
-            liveUrl: 'https://cooking-deck.vercel.app'
+            liveUrl: 'https://cookingdeck.es'
         }
     ]
 }
