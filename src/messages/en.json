@@ -130,7 +130,7 @@
     },
     "project3": {
       "title": "Cooking Deck",
-      "description": "Web made with Next JS, React, Tailwind and Supabase, connected to Gemini API to generate recipes."
+      "description": "Web made with Next JS, React, Tailwind and Supabase. It has an agent created with Groq and Llama 3 that helps you create recipes or with anything related to cooking."
     }
   },
   "footer": {
