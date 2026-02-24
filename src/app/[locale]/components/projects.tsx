@@ -1,7 +1,6 @@
 'use client';
 
 import Heading from "@/components/ui/heading";
-import { PROJECTS } from "@/lib/constants";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "motion/react";
@@ -9,8 +8,15 @@ import { Link } from "@/navigation";
 import { GithubIcon } from "@/components/ui/icons/GithubIcon";
 import { ExternalLinkIcon } from "@/components/ui/icons/ExternalLinkIcon";
 import { getTechIcon } from "@/components/ui/tech-icons";
+import { getLocalizedValue } from "@/sanity/lib/utils";
+import { urlForImage } from "@/sanity/lib/image";
 
-export default function Projects() {
+interface ProjectsProps {
+    data: any[];
+    locale: string;
+}
+
+export default function Projects({ data, locale }: ProjectsProps) {
     const t = useTranslations('projects');
 
     const containerVariants = {
@@ -32,6 +38,8 @@ export default function Projects() {
         }
     };
 
+    const displayProjects = data?.length > 0 ? data : [];
+
     return (
         <section id="projects" className="w-full flex flex-col items-center justify-start gap-8 md:gap-12">
             <motion.div
@@ -49,20 +57,29 @@ export default function Projects() {
                 viewport={{ once: true, margin: "-100px" }}
                 className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
             >
-                {PROJECTS().map((project) => (
+                {displayProjects.map((project) => (
                     <motion.div 
-                        key={project.title} 
+                        key={project._id || project.title} 
                         variants={itemVariants}
                         whileHover={{ y: -10, scale: 1.02 }}
                         className="flex flex-col gap-3 md:gap-4 bg-background-secondary/20 border-2 border-grey-900 rounded-xl p-4 md:p-5 hover:border-primary-500/50 transition-colors duration-300 group shadow-md hover:shadow-xl"
                     >
                         <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-2">
-                            <Image 
-                                src={project.image} 
-                                alt={project.title} 
-                                fill
-                                className="object-fill grayscale group-hover:grayscale-0 transition-all duration-500 scale-100"
-                            />
+                            {project.image ? (
+                                <Image 
+                                    src={urlForImage(project.image).url()} 
+                                    alt={project.title} 
+                                    fill
+                                    className="object-fill grayscale group-hover:grayscale-0 transition-all duration-500 scale-100"
+                                />
+                            ) : project.fallbackImage ? (
+                                <Image 
+                                    src={project.fallbackImage} 
+                                    alt={project.title} 
+                                    fill
+                                    className="object-fill grayscale group-hover:grayscale-0 transition-all duration-500 scale-100"
+                                />
+                            ) : null}
                             <div className="absolute inset-0 bg-primary-500/0 group-hover:bg-primary-500/10 transition-all duration-500" />
                         </div>
                         
@@ -72,25 +89,25 @@ export default function Projects() {
                                     {project.title}
                                 </h3>
                                 <div className="flex gap-3">
-                                    {project.githubUrl && (
-                                        <Link href={project.githubUrl} target="_blank" className="text-grey-900 hover:text-primary-500 transition-colors">
+                                    {project.github && (
+                                        <Link href={project.github} target="_blank" className="text-grey-900 hover:text-primary-500 transition-colors">
                                             <GithubIcon size={20} />
                                         </Link>
                                     )}
-                                    {project.liveUrl && (
-                                        <Link href={project.liveUrl} target="_blank" className="text-grey-900 hover:text-primary-500 transition-colors">
+                                    {project.link && (
+                                        <Link href={project.link} target="_blank" className="text-grey-900 hover:text-primary-500 transition-colors">
                                             <ExternalLinkIcon size={20} />
                                         </Link>
                                     )}
                                 </div>
                             </div>
                             <p className="text-grey-900 text-xs sm:text-sm leading-relaxed line-clamp-2">
-                                {project.description}
+                                {getLocalizedValue(project.description, locale)}
                             </p>
                         </div>
 
                         <div className="flex flex-wrap gap-2 mt-auto">
-                            {project.tags.map((tag) => (
+                            {project.technologies?.map((tag: string) => (
                                 <span 
                                     key={tag} 
                                     className="px-2.5 md:px-3 py-1 bg-primary-500/5 text-primary-500 text-xs font-mono rounded-full border border-primary-500/20 flex items-center gap-1.5"

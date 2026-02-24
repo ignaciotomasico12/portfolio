@@ -4,9 +4,20 @@ import Image from "next/image";
 import Heading from "@/components/ui/heading";
 import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
+import { getLocalizedValue, getLocalizedArray } from "@/sanity/lib/utils";
 
-export default function About() {
-    const about = useTranslations('about');
+interface AboutProps {
+    data: any;
+    locale: string;
+}
+
+export default function About({ data, locale }: AboutProps) {
+    const t = useTranslations('about');
+
+    const title = getLocalizedValue(data?.title, locale) || t('title');
+    const paragraphs = getLocalizedArray(data?.paragraphs, locale);
+    const fallbackParagraphs = [t('description.p1'), t('description.p2')];
+    const displayParagraphs = paragraphs.length > 0 ? paragraphs : fallbackParagraphs;
 
     return (
         <section id="about" className="w-full flex flex-col lg:flex-row items-start justify-between gap-8 md:gap-12">
@@ -39,9 +50,10 @@ export default function About() {
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                 className="w-full lg:w-3/5 flex flex-col gap-4 md:gap-6"
             >
-                <Heading title={about('title')} />
-                <p className="text-sm sm:text-base">{about('description.p1')}</p>
-                <p className="text-sm sm:text-base">{about('description.p2')}</p>
+                <Heading title={title} />
+                {displayParagraphs.map((p: string, i: number) => (
+                    <p key={i} className="text-sm sm:text-base">{p}</p>
+                ))}
             </motion.div>
         </section>
     )

@@ -1,6 +1,7 @@
+'use client';
+
 import { Button, buttonVariants } from "@/components/ui/button";
 import { TypewriterLoop } from "@/components/typewriter-loop";
-import { SOCIAL_MEDIA } from "@/lib/constants";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { MailIcon, MailIconHandle } from "@/components/ui/icons/MailIcon";
@@ -8,9 +9,16 @@ import { useRef, useState } from "react";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence, useTransform } from "motion/react";
 import AnimatedLogo from "@/components/animated-logo";
 import { cn } from "@/lib/utils";
+import { getLocalizedValue, getLocalizedArray } from "@/sanity/lib/utils";
 
-export default function Hero() {
-    const hero = useTranslations('hero');
+interface HeroProps {
+    data: any;
+    social: any;
+    locale: string;
+}
+
+export default function Hero({ data, social, locale }: HeroProps) {
+    const t = useTranslations('hero');
     const emailRef = useRef<MailIconHandle>(null);
 
     const { scrollY } = useScroll();
@@ -27,6 +35,18 @@ export default function Hero() {
     const y1 = useTransform(scrollY, [0, 500], [0, 200]);
     const y2 = useTransform(scrollY, [0, 500], [0, 100]);
 
+    const title = data?.title || t('title');
+    const subtitle = getLocalizedValue(data?.subtitle, locale) || t('subtitle');
+    const words = getLocalizedArray(data?.words, locale);
+    const fallbackWords = [
+        t('subtitle_words.word1'),
+        t('subtitle_words.word2'),
+        t('subtitle_words.word3'),
+        t('subtitle_words.word4')
+    ];
+    const description = getLocalizedValue(data?.description, locale) || t('description');
+    const email = social?.email || "ignaciotomasico12@gmail.com";
+
     return (
         <section className="w-full flex flex-col lg:flex-row items-start justify-start lg:items-center lg:justify-between min-h-screen py-14 lg:py-0 lg:h-screen relative" id="hero">
             <motion.div style={{ y: y1 }} className="w-full lg:w-[60%] flex flex-col items-start justify-start gap-3 md:gap-4 order-2 lg:order-1">
@@ -36,7 +56,7 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] w-full lg:w-[90%] font-medium text-left text-primary-500 tracking-[-1px] md:tracking-[-2px] leading-tight md:leading-[1.1] lg:leading-[100px]"
                 >
-                    {hero('title')}
+                    {title}
                 </motion.h1>
                 <motion.h2 
                     initial={{ opacity: 0, x: -20 }}
@@ -44,14 +64,9 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="text-lg sm:text-xl md:text-2xl lg:text-[30px] text-left text-grey-900"
                 >
-                    {hero('subtitle')}{" "}
+                    {subtitle}{" "}
                     <TypewriterLoop
-                        words={[
-                            hero('subtitle_words.word1'),
-                            hero('subtitle_words.word2'),
-                            hero('subtitle_words.word3'),
-                            hero('subtitle_words.word4')
-                        ]}
+                        words={words.length > 0 ? words : fallbackWords}
                         className="text-grey-900"
                         cursorClassName="bg-grey-900 h-4 lg:h-8 w-[2px]"
                     />
@@ -62,14 +77,14 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="text-left text-sm sm:text-base"
                 >
-                    {hero('description')}
+                    {description}
                 </motion.p>
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                    <Link href={SOCIAL_MEDIA.email} target='blank' aria-label={'Email'}>
+                    <Link href={`mailto:${email}`} target='blank' aria-label={'Email'}>
                         <motion.div 
                             className={cn(buttonVariants({ variant: "outline" }), "gap-2 md:gap-3")}
                             whileHover={{ y: -2 }}
@@ -78,7 +93,7 @@ export default function Hero() {
                             onMouseEnter={() => emailRef.current?.startAnimation()} 
                             onMouseLeave={() => emailRef.current?.stopAnimation()}
                         >
-                            <MailIcon size={20} ref={emailRef} /> {hero('button')}
+                            <MailIcon size={20} ref={emailRef} /> {t('button')}
                         </motion.div>
                     </Link>
                 </motion.div>

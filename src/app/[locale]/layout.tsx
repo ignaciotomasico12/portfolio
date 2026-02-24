@@ -22,19 +22,21 @@ const firaCode = Fira_Code({
     variable: '--font-fira-code',
 });
 
+import { getGlobalData } from "@/sanity/lib/fetch";
+import { getLocalizedValue } from "@/sanity/lib/utils";
+
 export async function generateMetadata(
   { params }: MetaProps
 ): Promise<Metadata> {
   const { locale } = await params;
+  const globalData = await getGlobalData();
 
-  const global = await getTranslations({
-    locale,
-    namespace: 'global.metadata'
-  });
+  const title = getLocalizedValue(globalData?.metadata?.title, locale);
+  const description = getLocalizedValue(globalData?.metadata?.description, locale);
 
   return {
-    title: global('title'),
-    description: global('description')
+    title: title || "Ignacio Tomás | Frontend Developer",
+    description: description || "Portfolio personal de Ignacio Tomás."
   };
 }
 
