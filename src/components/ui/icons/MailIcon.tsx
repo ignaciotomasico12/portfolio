@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import type { HTMLMotionProps, Variants } from "motion/react";
-import { motion, useAnimation, useReducedMotion } from "motion/react";
+import { motion, useAnimation } from "motion/react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
 export interface MailIconHandle {
@@ -29,26 +29,19 @@ const MailIcon = forwardRef<MailIconHandle, MailIconProps>(
   },
   ref,
  ) => {
-  const flapControls = useAnimation();
-  const bodyControls = useAnimation();
-  const containerControls = useAnimation();
-  const reduced = useReducedMotion();
-  const isControlled = useRef(false);
+   const flapControls = useAnimation();
+   const bodyControls = useAnimation();
+   const containerControls = useAnimation();
+   const isControlled = useRef(false);
 
   useImperativeHandle(ref, () => {
    isControlled.current = true;
    return {
-    startAnimation: () => {
-     if (reduced) {
-      containerControls.start("normal");
-      flapControls.start("normal");
-      bodyControls.start("normal");
-     } else {
+     startAnimation: () => {
       containerControls.start("animate");
       flapControls.start("animate");
       bodyControls.start("animate");
-     }
-    },
+     },
     stopAnimation: () => {
      containerControls.start("normal");
      flapControls.start("normal");
@@ -59,21 +52,20 @@ const MailIcon = forwardRef<MailIconHandle, MailIconProps>(
 
   const handleEnter = useCallback(
    (e?: React.MouseEvent<HTMLDivElement>) => {
-    if (!isAnimated || reduced) return;
-    if (!isControlled.current) {
-     containerControls.start("animate");
-     flapControls.start("animate");
-     bodyControls.start("animate");
-    } else onMouseEnter?.(e as any);
-   },
-   [
-    containerControls,
-    flapControls,
-    bodyControls,
-    reduced,
-    onMouseEnter,
-    isAnimated,
-   ],
+     if (!isAnimated) return;
+     if (!isControlled.current) {
+      containerControls.start("animate");
+      flapControls.start("animate");
+      bodyControls.start("animate");
+     } else onMouseEnter?.(e as any);
+    },
+    [
+     containerControls,
+     flapControls,
+     bodyControls,
+     onMouseEnter,
+     isAnimated,
+    ],
   );
 
   const handleLeave = useCallback(

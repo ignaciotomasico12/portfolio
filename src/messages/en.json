@@ -125,8 +125,8 @@
       "description": "Web platform with React connected to a Database, user and access permission management. Made with Mongo DB, Express, React and Node JS."
     },
     "project2": {
-      "title": "Statify",
-      "description": "App connected to the Spotify API to show your information and your favorite artists. Made with Next JS, React, Tailwind and React Query."
+      "title": "Lecturia",
+      "description": "Web app PWA to see your books and your stats and have a wishlist of your favorite books. Made with Next JS,React, Tailwind, Supabase and Shadcn UI."
     },
     "project3": {
       "title": "Cooking Deck",

@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import type { HTMLMotionProps, Variants } from "motion/react";
-import { motion, useAnimation, useReducedMotion } from "motion/react";
+import { motion, useAnimation } from "motion/react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
 export interface GlobeIconHandle {
@@ -29,23 +29,17 @@ const GlobeIcon = forwardRef<GlobeIconHandle, GlobeIconProps>(
   },
   ref,
  ) => {
-  const controls = useAnimation();
-  const pathControls = useAnimation();
-  const reduced = useReducedMotion();
-  const isControlled = useRef(false);
+   const controls = useAnimation();
+   const pathControls = useAnimation();
+   const isControlled = useRef(false);
 
   useImperativeHandle(ref, () => {
    isControlled.current = true;
    return {
-    startAnimation: () => {
-     if (reduced) {
-      controls.start("normal");
-      pathControls.start("normal");
-     } else {
+     startAnimation: () => {
       controls.start("animate");
       pathControls.start("animate");
-     }
-    },
+     },
     stopAnimation: () => {
      controls.start("normal");
      pathControls.start("normal");
@@ -55,15 +49,15 @@ const GlobeIcon = forwardRef<GlobeIconHandle, GlobeIconProps>(
 
   const handleEnter = useCallback(
    (e?: React.MouseEvent<HTMLDivElement>) => {
-    if (!isAnimated || reduced) return;
-    if (!isControlled.current) {
-     controls.start("animate");
-     pathControls.start("animate");
-    } else {
-     onMouseEnter?.(e as any);
-    }
-   },
-   [controls, pathControls, reduced, isAnimated, onMouseEnter],
+     if (!isAnimated) return;
+     if (!isControlled.current) {
+      controls.start("animate");
+      pathControls.start("animate");
+     } else {
+      onMouseEnter?.(e as any);
+     }
+    },
+    [controls, pathControls, isAnimated, onMouseEnter],
   );
 
   const handleLeave = useCallback(

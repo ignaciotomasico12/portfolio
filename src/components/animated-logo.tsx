@@ -10,7 +10,6 @@ export default function AnimatedLogo() {
 
     const { scrollYProgress } = useScroll();
 
-    // Scroll Parallax Effects
     const y1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
     const rotate1 = useTransform(scrollYProgress, [0, 1], [0, -10]);
     
@@ -22,7 +21,6 @@ export default function AnimatedLogo() {
 
     const viewBox = "0 0 958 1000";
 
-    // Continuous Levitation Animation
     const floatAnim = (delay: number) => ({
         y: [-15, 15, -15],
         transition: {

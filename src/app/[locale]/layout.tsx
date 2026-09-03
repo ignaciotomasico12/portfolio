@@ -15,6 +15,7 @@ import SplashCursor from '@/components/splash-cursor';
 import CustomCursor from '@/components/custom-cursor';
 import PageTransition from '@/components/layout/page-transition';
 import { ParticlesBackground } from '@/components/ui/particles-background';
+import MotionProvider from '@/components/motion-provider';
 
 const firaCode = Fira_Code({
     subsets: ['latin'],
@@ -60,6 +61,7 @@ export default async function LocaleLayout({
           suppressHydrationWarning
         >
           <NextIntlClientProvider locale={locale} messages={messages} timeZone="Europe/Madrid">
+            <MotionProvider>
             <LocaleInitializer />
             <div
               className="fixed inset-0 z-0"
@@ -78,6 +80,7 @@ export default async function LocaleLayout({
             <ScrollToTop />
             <SplashCursor />
             <CustomCursor />
+            </MotionProvider>
           </NextIntlClientProvider>
         </body>
       </html>

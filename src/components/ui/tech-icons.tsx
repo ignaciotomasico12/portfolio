@@ -8,7 +8,7 @@ import {
   SiNodedotjs, 
   SiExpress, 
   SiHtml5, 
-  SiCss3, 
+  SiCss, 
   SiSass, 
   SiJavascript, 
   SiMongodb, 
@@ -55,7 +55,7 @@ export const getTechIcon = (techName: string) => {
     case "html":
       return <SiHtml5 className={iconClass} />;
     case "css":
-      return <SiCss3 className={iconClass} />;
+      return <SiCss className={iconClass} />;
     case "sass":
       return <SiSass className={iconClass} />;
     case "javascript":

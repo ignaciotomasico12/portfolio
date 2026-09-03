@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import type { HTMLMotionProps, Variants } from "motion/react";
-import { motion, useAnimation, useReducedMotion } from "motion/react";
+import { motion, useAnimation } from "motion/react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
 export interface GithubIconHandle {
@@ -29,26 +29,24 @@ const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
   },
   ref,
  ) => {
-  const controls = useAnimation();
-  const reduced = useReducedMotion();
-  const isControlled = useRef(false);
+   const controls = useAnimation();
+   const isControlled = useRef(false);
 
   useImperativeHandle(ref, () => {
    isControlled.current = true;
    return {
-    startAnimation: () =>
-     reduced ? controls.start("normal") : controls.start("animate"),
+     startAnimation: () => controls.start("animate"),
     stopAnimation: () => controls.start("normal"),
    };
   });
 
   const handleEnter = useCallback(
    (e?: React.MouseEvent<HTMLDivElement>) => {
-    if (!isAnimated || reduced) return;
-    if (!isControlled.current) controls.start("animate");
-    else onMouseEnter?.(e as any);
-   },
-   [controls, reduced, onMouseEnter, isAnimated],
+     if (!isAnimated) return;
+     if (!isControlled.current) controls.start("animate");
+     else onMouseEnter?.(e as any);
+    },
+    [controls, onMouseEnter, isAnimated],
   );
 
   const handleLeave = useCallback(

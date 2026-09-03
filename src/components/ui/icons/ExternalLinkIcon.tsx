@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import type { HTMLMotionProps, Variants } from "motion/react";
-import { motion, useAnimation, useReducedMotion } from "motion/react";
+import { motion, useAnimation } from "motion/react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
 export interface ExternalLinkIconHandle {
@@ -32,23 +32,17 @@ const ExternalLinkIcon = forwardRef<
   },
   ref,
  ) => {
-  const boxControls = useAnimation();
-  const arrowControls = useAnimation();
-  const reduced = useReducedMotion();
-  const isControlled = useRef(false);
+   const boxControls = useAnimation();
+   const arrowControls = useAnimation();
+   const isControlled = useRef(false);
 
   useImperativeHandle(ref, () => {
    isControlled.current = true;
    return {
-    startAnimation: () => {
-     if (reduced) {
-      boxControls.start("normal");
-      arrowControls.start("normal");
-     } else {
+     startAnimation: () => {
       boxControls.start("animate");
       arrowControls.start("animate");
-     }
-    },
+     },
     stopAnimation: () => {
      boxControls.start("normal");
      arrowControls.start("normal");
@@ -58,13 +52,13 @@ const ExternalLinkIcon = forwardRef<
 
   const handleEnter = useCallback(
    (e?: React.MouseEvent<HTMLDivElement>) => {
-    if (!isAnimated || reduced) return;
-    if (!isControlled.current) {
-     boxControls.start("animate");
-     arrowControls.start("animate");
-    } else onMouseEnter?.(e as any);
-   },
-   [boxControls, arrowControls],
+     if (!isAnimated) return;
+     if (!isControlled.current) {
+      boxControls.start("animate");
+      arrowControls.start("animate");
+     } else onMouseEnter?.(e as any);
+    },
+    [boxControls, arrowControls],
   );
 
   const handleLeave = useCallback(

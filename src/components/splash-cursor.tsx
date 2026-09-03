@@ -1,6 +1,7 @@
 // @ts-nocheck
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { hasHardwareAcceleration } from '@/lib/gpu';
 
 function SplashCursor({
   SIM_RESOLUTION = 128,
@@ -20,8 +21,15 @@ function SplashCursor({
 }) {
   const canvasRef = useRef(null);
   const animationFrameId = useRef(null);
+  const [gpuReady, setGpuReady] = useState(false);
 
   useEffect(() => {
+    setGpuReady(hasHardwareAcceleration());
+  }, []);
+
+  useEffect(() => {
+    if (!gpuReady) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -63,7 +71,10 @@ function SplashCursor({
     const { gl, ext } = getWebGLContext(canvas);
     if (!ext.supportLinearFiltering) {
       config.DYE_RESOLUTION = 256;
+      config.SIM_RESOLUTION = 64;
       config.SHADING = false;
+    } else {
+      config.DYE_RESOLUTION = Math.min(config.DYE_RESOLUTION, 720);
     }
 
     function getWebGLContext(canvas) {
@@ -998,13 +1009,20 @@ function SplashCursor({
         cancelAnimationFrame(animationFrameId.current);
         animationFrameId.current = null;
       }
+      const ctx = canvas.getContext('webgl2') || canvas.getContext('webgl');
+      if (ctx) {
+        const ext = ctx.getExtension('WEBGL_lose_context');
+        if (ext) ext.loseContext();
+      }
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, []);
+  }, [gpuReady]);
+
+  if (!gpuReady) return null;
 
   return (
     <div

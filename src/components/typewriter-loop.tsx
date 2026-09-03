@@ -19,8 +19,15 @@ export const TypewriterLoop = ({
   const [subIndex, setSubIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
   const [isWaiting, setIsWaiting] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     if (isWaiting) {
       const timeout = setTimeout(() => {
         setIsWaiting(false);
@@ -45,24 +52,28 @@ export const TypewriterLoop = ({
     }, reverse ? 75 : 150);
 
     return () => clearTimeout(timeout);
-  }, [subIndex, index, reverse, isWaiting, words, wait]);
+  }, [subIndex, index, reverse, isWaiting, words, wait, mounted]);
+
+  const displayText = words[index].substring(0, subIndex);
 
   return (
     <div className={cn("inline-flex items-center justify-center", className)}>
-      <span>{words[index].substring(0, subIndex)}</span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 0.8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        className={cn(
-          "ml-1 inline-block h-4 w-[4px] bg-blue-500 md:h-6 lg:h-10",
-          cursorClassName
-        )}
-      ></motion.span>
+      <span>{displayText}</span>
+      {mounted && (
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className={cn(
+            "ml-1 inline-block h-4 w-[4px] bg-blue-500 md:h-6 lg:h-10",
+            cursorClassName
+          )}
+        />
+      )}
     </div>
   );
 };

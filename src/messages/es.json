@@ -125,13 +125,13 @@
       "description": "Web app responsiva de viajes y cursos escolares en Irlanda. Conectada a Sanity como gestor de contenido. Hecha con Next JS, React, Chackra UI y Sanity."
     },
     "project2": {
-      "title": "Statify",
-      "description": "App conectada a la API de Spotify para mostrar tu información y tus artistas favoritos. Hecha con Next JS, React, Tailwind y React Query."
+      "title": "Lecturia",
+      "description": "Web app PWA para ver tus libros y tus stats y tener un whislist de tus libros favoritos. Hecha con Next JS,React, Tailwind, Supabase y Shadcn UI."
     },
     "project3": {
       "title": "Cooking Deck",
       "description": "Web hecha con Next JS, React, Tailwind y Supabase. Tiene un agente creado con Groq y llama 3 que te ayuda a crear recetas o con cualquier cosa relacionada con la cocina."
-    } 
+    }
   },
   "footer": {
     "text-1": "Hecho con",

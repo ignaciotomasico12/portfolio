@@ -74,6 +74,15 @@ body {
   font-weight: 100;
 }
 
+/* GPU-accelerated animation hints */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
 /* Scrollbar Customization */
 @layer base {
   /* Firefox */

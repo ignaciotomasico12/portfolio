@@ -3,18 +3,25 @@
 import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'motion/react';
 import { cn } from '@/lib/utils';
+import { hasHardwareAcceleration } from '@/lib/gpu';
 
 export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
+  const [hasGPU, setHasGPU] = useState(false);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   
-  // Spring configuration for the follower (ring) - smooth and slightly delayed
   const springConfig = { damping: 25, stiffness: 300, mass: 0.5 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    setHasGPU(hasHardwareAcceleration());
+  }, []);
+
+  useEffect(() => {
+    if (!hasGPU) return;
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -34,11 +41,12 @@ export default function CustomCursor() {
       document.documentElement.removeEventListener('mouseenter', handleMouseEnter);
       document.documentElement.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [cursorX, cursorY]);
+  }, [hasGPU, cursorX, cursorY]);
+
+  if (!hasGPU) return null;
 
   return (
     <>
-      {/* Main Dot - Positioned exactly at mouse */}
       <motion.div
         className={cn(
             "fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-9999",
@@ -52,7 +60,6 @@ export default function CustomCursor() {
           opacity: isVisible ? 1 : 0,
         }}
       />
-      {/* Follower Ring - Sprung position */}
       <motion.div
         className={cn(
             "fixed top-0 left-0 w-8 h-8 border border-white rounded-full pointer-events-none z-9998 box-border",
